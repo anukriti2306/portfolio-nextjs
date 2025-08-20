@@ -3,9 +3,10 @@ import Link from 'next/link';
 import { FaCalendarAlt, FaClock } from 'react-icons/fa';
 
 const formatDate = (value: string | number | Date) => {
-  const d = new Date(value as any);
-  if (isNaN(d.getTime())) return String(value);
-  return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+  // Convert the value to a Date
+  const date = new Date(value);
+  if (isNaN(date.getTime())) return String(value);
+  return date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
 };
 
 const Blogs = () => {

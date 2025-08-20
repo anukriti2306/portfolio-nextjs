@@ -3,14 +3,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import { motion } from 'framer-motion';
+import { motion, Variants, Transition } from 'framer-motion';
 import { 
   scaleIn, fadeInUp, fadeInDown, fadeIn, 
   slideInLeft, slideInRight, staggerContainer, 
   cardHoverSmall 
 } from '@/utils/animations';
 
-const Hero = () => {
+const springTransition: Transition = { type: 'spring', stiffness: 300 };
+
+const Hero: React.FC = () => {
   return (
     <section className='py-28 container max-w-7xl mx-auto px-4'>
       <motion.div 
@@ -22,7 +24,6 @@ const Hero = () => {
         {/* Profile Image */}
         <motion.div 
           {...scaleIn}
-          transition={{ delay: 0.2 }}          
           className='flex flex-col items-center mb-4'
         >
           <Image
@@ -38,12 +39,11 @@ const Hero = () => {
         <motion.h1 
           className='text-4xl md:text-6xl font-bold mb-6'
           {...fadeInUp}
-          transition={{ delay: 0.3 }}
         >
-          Hi, I'm <motion.span 
+          Hi, I'm{' '}
+          <motion.span 
             className='text-primary'
             {...fadeInDown}
-            transition={{ delay: 0.8 }}
           >
             Anukriti Sharma
           </motion.span>
@@ -53,7 +53,6 @@ const Hero = () => {
         <motion.p 
           className='text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8'
           {...fadeInUp}
-          transition={{ delay: 0.4 }}
         >
           Fullstack Development | Agentic AI | Student @ RVITM
         </motion.p>
@@ -62,47 +61,32 @@ const Hero = () => {
         <motion.div 
           className='flex justify-center space-x-4 mb-8'
           {...slideInLeft}
-          transition={{ delay: 0.5 }}
         >
-          <motion.a 
-            whileHover={{ scale: 1.2 }} 
-            whileTap={{ scale: 0.9 }} 
-            transition={{ type: 'spring', stiffness: 300 } as any}
-            href="/" 
-            className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition duration-300"
-          >
-            <FaGithub />
-          </motion.a>
-          <motion.a 
-            whileHover={{ scale: 1.2 }} 
-            whileTap={{ scale: 0.9 }} 
-            transition={{ type: 'spring', stiffness: 300 } as any}
-            href="/" 
-            className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition duration-300"
-          >
-            <FaLinkedinIn />
-          </motion.a>
-          <motion.a 
-            whileHover={{ scale: 1.2 }} 
-            whileTap={{ scale: 0.9 }} 
-            transition={{ type: 'spring', stiffness: 300 } as any}
-            href="/" 
-            className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition duration-300"
-          >
-            <FaTwitter />
-          </motion.a>
+          {[FaGithub, FaLinkedinIn, FaTwitter].map((Icon, idx) => (
+            <motion.a
+              key={idx}
+              href="/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition duration-300"
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              transition={springTransition}
+            >
+              <Icon />
+            </motion.a>
+          ))}
         </motion.div>
 
         {/* Buttons */}
         <motion.div 
           className='flex flex-col md:flex-row justify-center gap-4'
           {...slideInRight}
-          transition={{ delay: 0.6 }}
         >
           <motion.div 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            transition={{ type: 'spring', stiffness: 300 } as any}
+            transition={springTransition}
           >
             <Link
               href={"/projects"}
@@ -114,7 +98,7 @@ const Hero = () => {
           <motion.div 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            transition={{ type: 'spring', stiffness: 300 } as any}
+            transition={springTransition}
           >
             <Link
               href={"/contact"}

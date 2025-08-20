@@ -4,20 +4,23 @@ import React from 'react';
 import { FaCalendarAlt, FaClock } from 'react-icons/fa';
 
 const formatDate = (value: string | number | Date) => {
-  const d = new Date(value as any);
-  // Fallback to the raw value if parsing fails
-  if (isNaN(d.getTime())) return String(value);
-  return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+  const date = new Date(value);
+  // Fallback to raw value if parsing fails
+  if (isNaN(date.getTime())) return String(value);
+  return date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
 };
 
-const Blogs = () => {
+const Blogs: React.FC = () => {
   return (
     <section className="py-20 container max-w-7xl mx-auto px-4">
       <h2 className="text-3xl font-bold mb-12 text-center">Latest Blog Posts</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {blogs.map((blog) => (
-          <article key={blog.slug} className="bg-white dark:bg-dark/50 rounded-lg shadow-md p-6">
+          <article
+            key={blog.slug}
+            className="bg-white dark:bg-dark/50 rounded-lg shadow-md p-6"
+          >
             <Link href={`/blogs/${blog.slug}`}>
               <h3 className="text-xl font-semibold mb-2 hover:text-primary transition-colors">
                 {blog.title}
@@ -42,9 +45,13 @@ const Blogs = () => {
           </article>
         ))}
       </div>
-      <div className='text-center mt-12'>
-        <Link href="/blogs" className='inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors'>
-            View All Posts
+
+      <div className="text-center mt-12">
+        <Link
+          href="/blogs"
+          className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+        >
+          View All Posts
         </Link>
       </div>
     </section>
