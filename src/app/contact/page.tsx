@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaEnvelope,  FaMapMarkerAlt } from 'react-icons/fa'
 
 interface FormData {
   name: string

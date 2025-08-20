@@ -3,11 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import { motion, Variants, Transition } from 'framer-motion';
+import { motion, Transition } from 'framer-motion';
 import { 
-  scaleIn, fadeInUp, fadeInDown, fadeIn, 
+  scaleIn, fadeInUp, fadeInDown, 
   slideInLeft, slideInRight, staggerContainer, 
-  cardHoverSmall 
 } from '@/utils/animations';
 
 const springTransition: Transition = { type: 'spring', stiffness: 300 };
@@ -40,7 +39,7 @@ const Hero: React.FC = () => {
           className='text-4xl md:text-6xl font-bold mb-6'
           {...fadeInUp}
         >
-          Hi, I'm{' '}
+          Hi, I&apos;m{' '}
           <motion.span 
             className='text-primary'
             {...fadeInDown}
