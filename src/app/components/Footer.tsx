@@ -20,26 +20,20 @@ const Footer = () => {
           {/* Right section - social icons */}
           <div className="flex space-x-6">
             <Link
-              href="https://github.com/"
+              href="https://github.com/anukriti2306"
               target="_blank"
               className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition duration-300"
             >
               <FaGithub />
             </Link>
             <Link
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/anukritisharma23/"
               target="_blank"
               className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition duration-300"
             >
               <FaLinkedinIn />
             </Link>
-            <Link
-              href="https://twitter.com/"
-              target="_blank"
-              className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition duration-300"
-            >
-              <FaTwitter />
-            </Link>
+            
           </div>
         </div>
       </div>

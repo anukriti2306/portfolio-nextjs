@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
           className='flex flex-col items-center mb-4'
         >
           <Image
-            src={"/profile.avif"}
+            src={"/profile.png"}
             alt='profile image'
             width={100}
             height={100}
@@ -57,25 +57,29 @@ const Hero: React.FC = () => {
         </motion.p>
 
         {/* Social Links */}
-        <motion.div 
-          className='flex justify-center space-x-4 mb-8'
-          {...slideInLeft}
-        >
-          {[FaGithub, FaLinkedinIn, FaTwitter].map((Icon, idx) => (
-            <motion.a
-              key={idx}
-              href="/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition duration-300"
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
-              transition={springTransition}
-            >
-              <Icon />
-            </motion.a>
-          ))}
-        </motion.div>
+<motion.div 
+  className='flex justify-center space-x-4 mb-8'
+  {...slideInLeft}
+>
+  {[
+    { Icon: FaGithub, url: "https://github.com/anukriti2306" },
+    { Icon: FaLinkedinIn, url: "https://www.linkedin.com/in/anukritisharma23" },
+    ].map(({ Icon, url }, idx) => (
+    <motion.a
+        key={idx}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 transition duration-300"
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.9 }}
+        transition={springTransition}
+      >
+      <Icon />
+      </motion.a>
+    ))}
+  </motion.div>
+
 
         {/* Buttons */}
         <motion.div 
@@ -91,7 +95,7 @@ const Hero: React.FC = () => {
               href={"/projects"}
               className='bg-primary inline-block w-full md:w-auto text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors'
             >
-              View Projects
+              View All Projects
             </Link>
           </motion.div>
           <motion.div 
