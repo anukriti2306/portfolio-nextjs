@@ -48,7 +48,7 @@ const Projects = () => {
             <div className="flex gap-4 mt-2">
               {project.githubLink && (
                 <Link
-                  href={project.demoLink}
+                  href={project.githubLink}
                   target="_blank"
                   className="flex items-center gap-2 text-secondary hover:text-primary transition-colors"
                 >
