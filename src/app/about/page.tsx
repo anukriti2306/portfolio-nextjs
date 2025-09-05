@@ -94,7 +94,7 @@ const About = () => {
             <p className="text-secondary mb-2">
               RV Institute of Technology and Management, affiliated to Visvesvaraya Technological University
             </p>
-            <p className="text-secondary mb-2">CGPA: 9.41</p>
+            <p className="text-secondary mb-2">CGPA: 9.46</p>
           </div>
         </div>
       </section>
