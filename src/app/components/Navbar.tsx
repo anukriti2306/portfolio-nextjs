@@ -30,7 +30,7 @@ const Navbar = () => {
           
           {/* Logo */}
           <Link href="/" className="text-xl font-bold text-primary">
-            Portfolio&trade;
+           Anukriti Sharma&trade;
           </Link>
 
           {/* Desktop menu */}

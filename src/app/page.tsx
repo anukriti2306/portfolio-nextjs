@@ -1,13 +1,14 @@
 import Blogs from "./components/Blogs";
 import Hero from "./components/Hero";
 import Newsletter from "./components/Newsletter";
-import Projects from "./components/Projects";
+import FeaturedProjects from "./components/FeaturedProjects";
+
 
 export default function Home() {
   return (
     <>
       <Hero/>
-      <Projects/>
+      <FeaturedProjects/>
     </>
   );
 }

@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Left section */}
           <div className="text-center md:text-left mb-4 md:mb-0">
             <Link href="/" className="text-xl font-bold text-primary">
-              Portfolio&trade;
+              Anukriti Sharma&trade;
             </Link>
             <p className="text-sm text-secondary mt-2">
               © {new Date().getFullYear()} All rights reserved.
