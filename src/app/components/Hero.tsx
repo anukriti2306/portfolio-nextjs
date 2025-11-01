@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { motion, Transition } from 'framer-motion';
 import { 
   scaleIn, fadeInUp, fadeInDown, 

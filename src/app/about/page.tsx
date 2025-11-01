@@ -145,7 +145,7 @@ const About = () => {
             <li className="flex items-start gap-2">
               <FaChevronRight className="text-primary mt-1 flex-shrink-0" />
               <span>
-                Earned the <strong>"Level 1 Contributor"</strong> Holopin badge for active participation.
+                Earned the <strong>&quot;Level 1 Contributor&quot;</strong> Holopin badge for active participation.
               </span>
             </li>
           </ul>
